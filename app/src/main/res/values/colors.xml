@@ -7,4 +7,9 @@
     <color name="green_texts">#425c02</color>
     <color name="background_result">#b2c18d</color>
     <color name="white_transparent">#b5ffffff</color>
+    <color name="alini_comb_vivid_lime_green">#AAD922</color>
+    <color name="alini_comb_mint_green">#8CFF98</color>
+    <color name="alini_comb_bronze_yellow">#6F7C12</color>
+    <color name="alini_comb_cafe_noir">#483519</color>
+    <color name="alini_comb_vlack">#000000</color>
 </resources>

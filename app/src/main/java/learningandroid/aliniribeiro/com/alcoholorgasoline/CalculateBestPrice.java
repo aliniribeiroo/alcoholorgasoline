@@ -6,16 +6,20 @@ package learningandroid.aliniribeiro.com.alcoholorgasoline;
 
 public class CalculateBestPrice {
 
-    public String bestPrice(String alcoholPrice, String gasolinePrice){
+    public String bestPrice(String alcoholPrice, String gasolinePrice) {
 
-        Double alcoholPriceD = Double.parseDouble(alcoholPrice);
-        Double gasolinePriceD = Double.parseDouble(gasolinePrice);
-        Double betterPrice = alcoholPriceD / gasolinePriceD;
+        if (!alcoholPrice.isEmpty() && !gasolinePrice.isEmpty()) {
 
-        if (betterPrice>= 0.7){
-            return "gasolina";
-        }else{
-            return "álcool";
+            Double alcoholPriceD = Double.parseDouble(alcoholPrice);
+            Double gasolinePriceD = Double.parseDouble(gasolinePrice);
+            Double betterPrice = alcoholPriceD / gasolinePriceD;
+
+            if (betterPrice >= 0.7) {
+                return "gasolina";
+            } else {
+                return "álcool";
+            }
         }
+        return null;
     }
 }

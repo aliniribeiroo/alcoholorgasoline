@@ -47,7 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 // get the data from the editTexts
                 CalculateBestPrice bestPrice = new CalculateBestPrice();
                 String bestPriceresponse = bestPrice.bestPrice(alcohol.getText().toString(), gasoline.getText().toString());
-                resultPrice.setText("A melhor escolha é abastecer com " + bestPriceresponse+".");
+                if (bestPriceresponse != null){
+                    resultPrice.setText("A melhor escolha é abastecer com " + bestPriceresponse+".");
+                } else {
+                    Toast.makeText(getApplicationContext(), "Você deve informar os valores para serem calculados.", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
