@@ -112,19 +112,5 @@
         android:textSize="22sp"
         android:background="@color/white_transparent"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/green_texts"
-        android:id="@+id/priceResultid"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/verifyId"
-        android:layout_marginTop="50dp"
-        android:textSize="22sp"
-        android:background="@color/green_alcoolorfuel"
-        android:padding="5sp"/>
-
-
-
 </RelativeLayout>
 

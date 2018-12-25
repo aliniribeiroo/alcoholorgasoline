@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import learningandroid.aliniribeiro.com.gasolinaoualcool.R;
@@ -15,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText alcohol;
     private EditText gasoline;
     private Button verify;
-    private TextView resultPrice;
     private static final String KEY_TEXT_VALUE = "textValue";
 
     @Override
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         alcohol = (EditText) findViewById(R.id.alcoholId);
         gasoline = (EditText) findViewById(R.id.GasolineId);
         verify = (Button) findViewById(R.id.verifyId);
-        resultPrice = (TextView) findViewById(R.id.priceResultid);
+
 
         alcohol.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 CalculateBestPrice bestPrice = new CalculateBestPrice();
                 String bestPriceresponse = bestPrice.bestPrice(alcohol.getText().toString(), gasoline.getText().toString());
                 if (bestPriceresponse != null){
-                    resultPrice.setText("A melhor escolha é abastecer com " + bestPriceresponse+".");
+                    Toast.makeText(getApplicationContext(), "A melhor escolha é abastecer com " + bestPriceresponse+".", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "Você deve informar os valores para serem calculados.", Toast.LENGTH_LONG).show();
                 }
@@ -56,9 +54,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString(KEY_TEXT_VALUE, resultPrice.getText().toString());
-    }
 }
